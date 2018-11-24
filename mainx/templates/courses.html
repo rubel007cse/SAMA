@@ -5,9 +5,8 @@
     <div class="row" style="margin-top:10px; margin-bottom: 30px">
         <div class="col-md-3"></div>
         <div class="col-md-3">
-            {% for c in courselist %}
-
-            <a href="{% url 'play' c %}"> {{c}} </a> <br/>
+            {% for intance in courselist %}
+            <a href="course/{{intance.pk}}/{{intance.coursename}}" >{{intance.coursename}} </a><br />
 
             {%endfor%}
 
