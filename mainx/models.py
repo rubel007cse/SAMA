@@ -16,7 +16,3 @@ class SingleCourse(models.Model):
     episodethumbnailimage = models.CharField(max_length=50, default='0')
     episodeURL = models.CharField(max_length=50, default='0')
     nDate = models.DateTimeField()
-
-    def __str__(self):
-        return self.episodetitle+ ' - '+ self.episodedesc
-

@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{sctitle}}
+{% extends "index.html" %}
+{% block content %}
+<div class="container-fluid">
 
---
+    <div class="row" style="margin-top:10px; margin-bottom: 30px">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
 
-{{sinstance}}
-</body>
-</html>
+
+            {% for sin in sinstance %}
+            {{sin.episodethumbnailimage}} {{sin.episodetitle}}
+            <a href="{{sin.episodeURL}}">
+                Play
+            </a><br/>
+            {% endfor %}
+
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

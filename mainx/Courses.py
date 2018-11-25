@@ -8,7 +8,6 @@ def courses(request):
     # fetching data
     instance = get_list_or_404(Courses)
 
-    print('it', instance)
     context = {
         "courselist": instance,
         'htmltitle': 'Courses'
@@ -21,9 +20,8 @@ def courses(request):
 def singlecourse(request, id=None, cname=None):
 
     # fetching data
-    instance = get_object_or_404(SingleCourse, id =id)
+    instance = get_list_or_404(SingleCourse, courseid_id=id)
     context = {
-        "sctitle": instance.episodetitle,
         "sinstance": instance,
         'htmltitle': 'Single Course'
     }

@@ -5,6 +5,5 @@ urlpatterns = [
     url(r'^profile', Users.profile, name="profile"),
     url(r'^courses', Courses.courses, name="courses"),
     url(r'^course/(?P<id>.+)/(?P<cname>.+)/$', Courses.singlecourse, name="single"),
-    url(r'^play/(?P<cid>.+)/(?P<episode>.+)/$', Single.play, name="play"),
     url(r'^join', Join.join, name="join"),
 ]
