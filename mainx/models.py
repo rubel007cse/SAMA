@@ -16,3 +16,13 @@ class SingleCourse(models.Model):
     episodethumbnailimage = models.CharField(max_length=50, default='0')
     episodeURL = models.CharField(max_length=50, default='0')
     nDate = models.DateTimeField()
+
+
+
+class User(models.Model):
+    uid = models.CharField(primary_key=True,max_length=20)
+    uname = models.CharField(max_length=20, default='0')
+    uemail = models.CharField(max_length=30, default='0')
+    upass = models.CharField(max_length=20, default='0')
+    uImg = models.CharField(max_length=50, default='0')
+    nDate = models.DateTimeField()
