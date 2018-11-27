@@ -20,7 +20,7 @@ class SingleCourse(models.Model):
 
 
 class User(models.Model):
-    uid = models.CharField(primary_key=True,max_length=20)
+    uid = models.AutoField(primary_key=True,unique=True)
     uname = models.CharField(max_length=20, default='0')
     uemail = models.CharField(max_length=30, default='0')
     upass = models.CharField(max_length=20, default='0')

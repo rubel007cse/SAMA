@@ -3,38 +3,40 @@
 <div class="container-fluid">
 
     <div class="row" style="margin-top:10px; margin-bottom: 30px">
-        <div class="col-md-3"></div>
-        <div class="col-md-9">
+        <div class="col-md-1"></div>
 
+
+        <div class="col-md-5">
 
             <div class="card" style="margin-top: 40px; margin-bottom: 40px; width: auto; padding: 20px;">
-                <div class="card-body">
+                <h2>Join us by creating an account..</h2>
 
+                <div class="card-body">
 
                     <form method="post" action="{% url 'signup' %}"> {% csrf_token %}
                         <div class="form-group">
 
-                            <label for="name">Name:</label>
+                            <label for="name">Your Name</label>
                             <input type="text" name="name" class="form-control" id="name">
                         </div>
                         <div class="form-group">
 
-                            <label for="email">Email:</label>
+                            <label for="email">Your Email</label>
                             <input type="email" name="email" class="form-control" id="email">
 
                         </div>
                         <div class="form-group">
-                            <label for="password">Pass:</label>
+                            <label for="password">Give a password</label>
                             <input type="password" name="password" class="form-control" id="password">
 
                         </div>
                         <div class="form-group">
                             <button type="submit" name="signupfrom" class="btn btn-success"
-                                    value="signupformvalue">Join
+                                    value="signupformvalue">Signup
                             </button>
 
                             <p style="text-align: right; color:red; float: right; margin-right: 83px;">
-                                {{formValidation}}--</p>
+                                {{formValidationsup}}</p>
                         </div>
                     </form>
 
@@ -42,10 +44,13 @@
                 </div>
             </div>
 
-
-            <br/> <br/>
+        </div>
+        <div class="col-md-5">
 
             <div class="card" style="margin-top: 40px; margin-bottom: 40px; width: auto; padding: 20px;">
+
+                <h2>Sign in to continue..</h2>
+
                 <div class="card-body">
 
 
@@ -53,31 +58,34 @@
 
                         <div class="form-group">
 
-                            <label for="inemail">Email:</label>
+                            <label for="inemail">Your Email</label>
                             <input type="email" name="inemail" class="form-control" id="inemail">
 
                         </div>
                         <div class="form-group">
-                            <label for="inpassword">Pass:</label>
+                            <label for="inpassword">Your Password</label>
                             <input type="password" name="inpassword" class="form-control" id="inpassword">
 
                         </div>
                         <div class="form-group">
                             <button type="submit" name="signinfrom" class="btn btn-success"
-                                    value="signinformvalue">Join
+                                    value="signinformvalue">Signin
                             </button>
 
                             <p style="text-align: right; color:red; float: right; margin-right: 83px;">
-                                {{formValidation}}--</p>
+                                {{formValidationin}}</p>
                         </div>
                     </form>
 
                 </div>
             </div>
 
+        </div>
 
+        <div class="col-md-1">
         </div>
     </div>
+</div>
 
 </div>
 {% endblock %}
