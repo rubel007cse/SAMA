@@ -3,7 +3,7 @@ from django.utils import timezone
 from .models import User
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from requests.exceptions import HTTPError
-
+from django.core.exceptions import ObjectDoesNotExist
 
 def join(request):
     return render(request, 'join.html',
@@ -34,7 +34,7 @@ def signin(request):
         instance = User.objects.get(uemail=email, upass=password)
 
         if instance.uid:
-            validations = "Login Successfull!"
+            validations = "Login Successful!"
         else:
             validations = "Login failed!"
 
@@ -58,13 +58,20 @@ def createUser(name, email, passw):
     print('creating user.. ', name, email, passw)
 
     now = timezone.now()
+
+
     try:
-        User.objects.create(
-            uname=name,
-            uemail=email,
-            upass=passw,
-            nDate=now
-        )
-        return 'Registration Successfully done!'
-    except Exception as e:
-        return 'Registration failed! '+str(e)
+        instance = User.objects.get(uemail=email)
+        return "Email "+instance.uemail+" is already registered!"
+
+    except ObjectDoesNotExist:
+        try:
+            User.objects.create(
+                uname=name,
+                uemail=email,
+                upass=passw,
+                nDate=now
+            )
+            return 'Registration Successfully done!'
+        except Exception as e:
+            return 'Registration failed! ' + str(e)
