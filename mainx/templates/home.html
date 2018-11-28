@@ -1,14 +1,33 @@
 {% extends "index.html" %}
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
 
-            <a href="{% url 'join' %}">Join</a> <br/>
-            <a href="{% url 'courses' %}">Browse</a>
+     <div class="row">
+        <div class="col-md-12" style="text-align: center; margin-top: 70px">
+
+            <h2>A career guideline that was always a dream..</h2>
+            <p>Join and become a successful developer, grab the job you love and care for!</p>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+
+            <a href="{% url 'join' %}" style="margin-right: 20px;">
+                <button type="button" class="btn btn-success btn-lg ">Join us</button>
+            </a>
+            <a href="{% url 'courses' %}">
+
+                <button type="button" class="btn btn-outline-success btn-lg ">See courses</button>
+            </a>
 
 
         </div>
+        <div class="col-md-4"></div>
 
     </div>
 

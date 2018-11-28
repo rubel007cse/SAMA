@@ -2,19 +2,121 @@
 {% block content %}
 <div class="container-fluid">
 
-    <div class="row" style="margin-top:10px; margin-bottom: 30px">
-        <div class="col-md-3"></div>
-        <div class="col-md-3">
+    <div class="row" style="margin: 60px">
+
+        <div class="col-md-12">
+
+            <h2 style="margin-left: 20px">Top Loved</h2>
+
             {% for intance in courselist %}
-            <a href="course/{{intance.pk}}/{{intance.coursename}}" >{{intance.coursename}} </a><br />
+
+            <a href="course/{{intance.pk}}/{{intance.coursename}}">
+                <div class="card"
+                     style="display: inline-block; height: 350px;
+                     width: 280px; margin: 20px; background: #ced6e0;">
+                    <div class="card-body">
+
+                        {{intance.coursename}}
+
+
+                    </div>
+
+                </div>
+            </a>
 
             {%endfor%}
 
 
         </div>
-        <div class="col-md-6">
+
+
+    </div>
+    <div class="row" style="margin: 60px">
+
+        <div class="col-md-12">
+
+            <h2 style="margin-left: 20px">Recent Uploads</h2>
+
+            {% for intance in courselist %}
+
+            <a href="course/{{intance.pk}}/{{intance.coursename}}">
+                <div class="card"
+                     style="display: inline-block; height: 350px;
+                     width: 280px; margin: 20px; background: #ced6e0;">
+                    <div class="card-body">
+
+                        {{intance.coursename}}
+
+
+                    </div>
+
+                </div>
+            </a>
+
+            {%endfor%}
+
 
         </div>
+
+
+    </div>
+    <div class="row" style="margin: 60px">
+
+        <div class="col-md-12">
+
+            <h2 style="margin-left: 20px">For Beginners</h2>
+
+            {% for intance in courselist %}
+
+            <a href="course/{{intance.pk}}/{{intance.coursename}}">
+                <div class="card"
+                     style="display: inline-block; height: 350px;
+                     width: 280px; margin: 20px; background: #ced6e0;">
+                    <div class="card-body">
+
+                        {{intance.coursename}}
+
+
+                    </div>
+
+                </div>
+            </a>
+
+            {%endfor%}
+
+
+        </div>
+
+
+    </div>
+    <div class="row" style="margin: 60px">
+
+        <div class="col-md-12">
+
+            <h2 style="margin-left: 20px">Advanced for pro</h2>
+
+            {% for intance in courselist %}
+
+            <a href="course/{{intance.pk}}/{{intance.coursename}}">
+                <div class="card"
+                     style="display: inline-block; height: 350px;
+                     width: 280px; margin: 20px; background: #ced6e0;">
+                    <div class="card-body">
+
+                        {{intance.coursename}}
+
+
+                    </div>
+
+                </div>
+            </a>
+
+            {%endfor%}
+
+
+        </div>
+
+
     </div>
 
 </div>

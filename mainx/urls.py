@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^join', Join.join, name="join"),
     url(r'^signup', Join.signup, name="signup"),
     url(r'^signin', Join.signin, name="signin"),
+    url(r'^myprofile', Users.profile, name="myprofile"),
 ]

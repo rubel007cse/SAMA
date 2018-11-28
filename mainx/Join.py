@@ -4,6 +4,8 @@ from .models import User
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from requests.exceptions import HTTPError
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import redirect
+
 
 def join(request):
     return render(request, 'join.html',
@@ -34,7 +36,9 @@ def signin(request):
         instance = User.objects.get(uemail=email, upass=password)
 
         if instance.uid:
-            validations = "Login Successful!"
+            #validations = "Login Successful!"
+            return redirect('/myprofile')
+
         else:
             validations = "Login failed!"
 
