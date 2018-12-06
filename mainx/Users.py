@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from .models import User
 
 
 def profile(request):
-    return render(request, 'profile.html', {'htmltitle': 'My Profile'})
+    if request.session.has_key('userid'):
+        uid = request.session['userid']
+        instance = User.objects.get(uid=uid)
+        return render(request, 'profile.html', {'htmltitle': 'My Profile',
+                                                'uname': instance.uname})
+    else:
+        return render(request, 'join.html', {'htmltitle': 'Join Us'})

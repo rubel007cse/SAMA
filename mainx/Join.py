@@ -37,6 +37,7 @@ def signin(request):
 
         if instance.uid:
             #validations = "Login Successful!"
+            request.session['userid'] = instance.uid
             return redirect('/myprofile')
 
         else:

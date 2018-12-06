@@ -3,22 +3,59 @@
 <div class="container-fluid">
 
     <div class="row" style="margin-top:10px; margin-bottom: 30px">
-        <div class="col-md-3"></div>
+        <div class="col-md-1"></div>
         <div class="col-md-3">
 
 
-            {% for sin in sinstance %}
-            {{sin.episodethumbnailimage}} {{sin.episodetitle}}
-            <a href="{{sin.episodeURL}}">
-                Play
-            </a><br/>
-            {% endfor %}
+            <nav>
+                <div class="nav flex-column" role="tablist" aria-orientation="vertical">
+
+                    {% for sin in sinstance reversed %}
+                    <a class="btn btn-outline-success" style="margin: 8px; text-align: left"
+                       data-toggle="tab" href="#tab{{sin.id}}" role="tab"
+                       aria-selected="false">
+                        <h5>{{sin.episodetitle}} </h5>
+                        <h6>{{sin.episodedesc}}</h6>
+                    </a>
+
+                    {% endfor %}
+
+                </div>
+            </nav>
 
 
         </div>
-        <div class="col-md-6">
+
+        <div class="col-md-7">
+
+
+            <div class="card" style="margin-top: 20px;">
+                <div class="card-body">
+
+                    <div class="tab-content" id="nav-tabContent">
+
+                        {% for sin in sinstance reversed %}
+
+                        <div class="tab-pane fade"
+                             id="tab{{sin.id}}" role="tabpanel">{{sin.id}}. {{sin.episodedesc}}
+
+                            <img src="{{sin.episodethumbnailimage}}" height="200px"
+                                 width="500px" />
+
+                        </div>
+
+                        {% endfor %}
+
+
+                    </div>
+
+                </div>
+            </div>
 
         </div>
+
+        <div class="col-md-1"></div>
+
     </div>
 
 </div>
