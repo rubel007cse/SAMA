@@ -6,7 +6,9 @@ class Courses(models.Model):
     coursename = models.CharField(max_length=50, default='0')
     description = models.CharField(max_length=100, default='0')
     skills = models.CharField(max_length=50, default='0')
+    difficulty = models.CharField(max_length=10, default='0')
     thumbnailimage = models.CharField(max_length=50, default='0')
+    coursecount = models.CharField(max_length=5, default='0')
     nDate = models.DateTimeField()
 
 class SingleCourse(models.Model):

@@ -10,7 +10,8 @@ def courses(request):
 
     context = {
         "courselist": instance,
-        'htmltitle': 'Courses'
+        'htmltitle': 'Courses',
+        'isactive_courses' : 'active'
     }
     return render(request,
                   'courses.html', context)
@@ -23,7 +24,8 @@ def singlecourse(request, id=None, cname=None):
     instance = get_list_or_404(SingleCourse, courseid_id=id)
     context = {
         "sinstance": instance,
-        'htmltitle': 'Single Course'
+        'htmltitle': 'Single Course',
+        'isactive': 'active'
     }
 
     return render(request,

@@ -9,7 +9,7 @@ from django.shortcuts import redirect
 
 def join(request):
     return render(request, 'join.html',
-                  {'htmltitle': 'Join MSP'})
+                  {'htmltitle': 'Join MSP', 'isactive_join': 'active'})
 
 
 def signup(request):
@@ -22,11 +22,11 @@ def signup(request):
         returndata = createUser(name, email, password)
 
         return render(request, 'join.html',
-                      {'htmltitle': 'Join MSP', 'formValidationsup': returndata})
+                      {'htmltitle': 'Join MSP', 'formValidationsup': returndata, 'isactive_join': 'active'})
 
     else:
         return render(request, 'join.html',
-                      {'htmltitle': 'Join MSP'})
+                      {'htmltitle': 'Join MSP', 'isactive_join': 'active'})
 
 
 def signin(request):
@@ -46,7 +46,8 @@ def signin(request):
         context = {
                 "sinstance": instance,
                 "htmltitle": 'Signin MSP',
-                "formValidationin": validations
+                "formValidationin": validations,
+                "isactive_join": 'active'
             }
 
         print ('sign in res for ',email,password, instance.uid)
@@ -55,7 +56,7 @@ def signin(request):
         return render(request, 'join.html', context)
 
     else:
-        return render(request, 'join.html', {})
+        return render(request, 'join.html', {'isactive_join' : 'active'})
 
 
 def createUser(name, email, passw):
